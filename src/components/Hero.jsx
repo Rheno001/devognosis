@@ -39,7 +39,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <section>
+        <section className='relative overflow-hidden'>
             <div className="inset-0 bg-fixed z-0 fixed bg-center bg-cover"
             style={{
                 backgroundImage: `url(${singleBackgroundImage})`, // Use a single background image
