@@ -42,9 +42,9 @@ function About() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 overflow-hidden">
       {/* Hero Section */}
-      <div className="relative h-[500px] w-full overflow-hidden">
+      <div className="relative h-[500px] w-full">
         <div
           className="inset-0 bg-fixed z-0 fixed bg-center bg-cover"
           style={{
@@ -238,7 +238,7 @@ function About() {
 
           {/* Second Div */}
           <motion.div
-            className="flex p-4 rounded-xl cursor-pointer"
+            className="flex p-4 rounded-xl cursor-pointer  overflow-x-clip"
             onClick={() => handleCardClick(1)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -277,7 +277,7 @@ function About() {
       </section>
 
       {/* Courses Section */}
-      <section className="py-16 px-6 md:px-16 text-center relative z-1 bg-gray-200">
+      <section className="py-16 px-6 md:px-16 text-center relative z-1 bg-gray-200  overflow-x-clip">
         <div className="top flex items-center justify-between">
           <motion.div
             className="flex flex-col w-full md:w-1/2 items-center md:items-start mb-[15px]"
@@ -315,7 +315,7 @@ function About() {
         </div>
 
         <motion.div
-          className="flex flex-col md:grid grid-cols-4 grid-row-3 gap-4"
+          className="flex flex-col md:grid grid-cols-4 grid-row-3 gap-4  overflow-x-clip"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
