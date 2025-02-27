@@ -102,7 +102,7 @@ export default function CoursesPage() {
     <div className="min-h-screen bg-gray-100 text-gray-900">
       {/* Hero Section */}
       <div
-        className="relative h-[500px] overflow-hidden bg-cover bg-center"
+        className="relative h-[500px] overflow-hidden bg-cover bg-center inset-0 bg-fixed z-0"
         style={{
           backgroundImage: `url(${singleBackgroundImage})`, // Use a single background image
           transition: "background-image 1s ease-in-out",
@@ -128,7 +128,7 @@ export default function CoursesPage() {
               transition={{ duration: 1 }}
             />
             <motion.h1
-              className="text-4xl md:text-6xl font-bold"
+              className="text-4xl md:text-6xl font-bold relative"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}

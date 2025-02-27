@@ -8,7 +8,7 @@ import Map from "../../components/Map.jsx";
 const ContactPage = () => {
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen inset-0 bg-fixed z-0 bg-center bg-cover relative"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundAttachment: "fixed",
