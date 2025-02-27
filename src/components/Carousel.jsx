@@ -4,14 +4,14 @@ import React, { useEffect, useRef, useState } from "react";
 
 // Import company logos
 import logo1 from "../AAPM.png";
-import logo2 from "../Apex.png";
-import logo3 from "../AAPM.png";
-import logo4 from "../AAPM.png";
-import logo5 from "../AAPM.png";
-import logo6 from "../AAPM.png";
-import logo7 from "../AAPM.png";
-import logo8 from "../AAPM.png";
-import logo9 from "../AAPM.png";
+import logo2 from "../Untitled-2.png";
+import logo3 from "../Untitled-3.png";
+import logo4 from "../Untitled-4.png";
+import logo5 from "../Untitled-5.png";
+import logo6 from "../Untitled-6.png";
+import logo7 from "../Untitled-10.png";
+import logo8 from "../Untitled-8.png";
+import logo9 from "../Untitled-9.png";
 
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
 

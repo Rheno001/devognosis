@@ -121,7 +121,7 @@ const TrainersPage = () => {
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section */}
       <div
-        className="relative h-[500px] overflow-hidden bg-cover bg-center"
+        className="relative h-[500px] overflow-hidden bg-cover bg-top"
         style={{
           backgroundImage: `url(${singleBackgroundImage})`, // Use a single background image
           transition: "background-image 1s ease-in-out",

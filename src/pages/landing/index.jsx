@@ -6,6 +6,7 @@ import faq from "../../questions.jpg";
 import Testimonials from "../../components/Testimonials.jsx";
 import Carousel from "../../components/Carousel.jsx";
 import Hero from "../../components/Hero.jsx";
+import singleBackgroundImage from "../../bg4.jpg";
 
 const images = [
   "../../assets/bg1.jpg",
@@ -27,7 +28,6 @@ const courses = [
 ];
 
 const Landing = () => {
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
@@ -53,8 +53,46 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-gray-100 relative overflow-hidden">
       {/* Hero Section with Image Slider */}
-      <Hero />
-
+      <div className="relative flex h-screen w-full">
+        <div
+          className="inset-0 bg-fixed z-0 fixed bg-center bg-cover"
+          style={{
+            backgroundImage: `url(${singleBackgroundImage})`,
+            transform: "translateZ(0)",
+            willChange: "transform",
+          }}
+        >
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-[40px] mt-[80px]">
+            <motion.h1
+              className="text-4xl md:text-6xl font-bold mt-[-60px]"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <span className="text-orange-500">Devongnosis </span>Education
+            </motion.h1>
+            <div className="text-center md:w-[50%]">
+              <motion.p
+                className="mt-4 text-lg md:text-xl"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 1 }}
+              >
+                Our trainers are industry leaders with years of experience and a
+                passion for teaching. They are dedicated to helping you achieve
+                your learning goals with personalized guidance and support.
+              </motion.p>
+            </div>
+            <Link
+              to="/contact"
+              className="mt-[20px] text-white text-lg px-6 py-2 rounded-3xl bg-orange-500 transition-transform duration-300 hover:scale-105 hover:bg-white hover:text-orange-500"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </div>
       {/* About Section */}
       <div
         className="py-16 px-6 md:px-16 flex flex-col md:flex-row items-center gap-10 z-1 relative bg-white"
