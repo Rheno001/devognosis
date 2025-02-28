@@ -9,6 +9,9 @@ function Navbar() {
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
     };
+    const handleClick = () => {
+        window.scrollTo(0, 0); // Scroll to the top
+    };
 
     return (
         <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md rounded-4xl mt-[20px]">
@@ -58,7 +61,7 @@ function Navbar() {
                                 key={link.name}
                                 to={link.path}
                                 className="relative text-lg py-3 text-white lg:text-gray-800 group transition-all"
-                                onClick={() => setIsOpen(false)}
+                                onClick={() => setIsOpen(false) (handleClick)}
                             >
                                 {link.name}
                                 <span className="absolute left-0 bottom-0 h-0.5 w-full bg-white lg:bg-gradient-to-r from-orange-500 to-orange-300 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
@@ -70,6 +73,7 @@ function Navbar() {
                 {/* Contact Us Button */}
                 <div className="hidden lg:flex">
                     <Link
+                        onClick={handleClick}
                         to="/contact"
                         className="text-white text-lg px-6 py-2 rounded-3xl bg-orange-500 transition-transform duration-300 hover:scale-105 hover:text-orange-500 shadow-md hover:bg-white"
                     >
