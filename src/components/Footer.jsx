@@ -3,6 +3,9 @@ import logo from "../devalone.png";
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
+    const handleClick = () => {
+        window.scrollTo(0, 0); // Scroll to the top
+    };
   return (
     <footer className="bg-gray-900 text-white py-12 rounded-t-2xl relative z-1">
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -22,10 +25,10 @@ export default function Footer() {
         <div className="flex flex-col items-center">
           <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
           <ul className="space-y-2 flex flex-col text-center text-gray-400">
-          <Link to="/" className="hover:border-b-2 hover:border-orange-500">Home</Link>
-          <Link to="/course" className="hover:border-b-2 hover:border-orange-500">Courses</Link>
-          <Link to="/trainers" className="hover:border-b-2 hover:border-orange-500">Trainers</Link>
-          <Link to="/about" className="hover:border-b-2 hover:border-orange-500">About Us</Link>
+          <Link to="/" onClick={handleClick} className="hover:border-b-2 hover:border-orange-500">Home</Link>
+          <Link to="/about" onClick={handleClick} className="hover:border-b-2 hover:border-orange-500">About Us</Link>
+          <Link to="/courses" onClick={handleClick} className="hover:border-b-2 hover:border-orange-500">Courses</Link>
+          <Link to="/trainers" onClick={handleClick} className="hover:border-b-2 hover:border-orange-500">Trainers</Link>
           </ul>
         </div>
 
