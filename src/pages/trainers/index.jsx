@@ -124,7 +124,8 @@ const TrainersPage = () => {
         className="relative inset-0 bg-fixed z-0 h-[500px] bg-center bg-cover"
         style={{
           backgroundImage: `url(${singleBackgroundImage})`,
-          transition: "background-image 1s ease-in-out",
+          transform: "translateZ(0)",
+          willChange: "transform",
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>

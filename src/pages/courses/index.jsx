@@ -105,7 +105,8 @@ export default function CoursesPage() {
         className="relative h-[500px] overflow-hidden bg-cover bg-center inset-0 bg-fixed z-0"
         style={{
           backgroundImage: `url(${singleBackgroundImage})`, // Use a single background image
-          transition: "background-image 1s ease-in-out",
+          transform: "translateZ(0)",
+          willChange: "transform",
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
