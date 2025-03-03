@@ -61,7 +61,10 @@ function Navbar() {
                                 key={link.name}
                                 to={link.path}
                                 className="relative text-lg py-3 text-white lg:text-gray-800 group transition-all"
-                                onClick={() => setIsOpen(false) (handleClick)}
+                                onClick={() => {
+                                    handleClick()
+                                    setIsOpen(false)
+                                }}
                             >
                                 {link.name}
                                 <span className="absolute left-0 bottom-0 h-0.5 w-full bg-white lg:bg-gradient-to-r from-orange-500 to-orange-300 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
