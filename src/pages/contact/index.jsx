@@ -5,7 +5,7 @@ import heroImage from "../../assets/telly.jpg"; // Adjust the path to your logo
 import backgroundImage from "../../background.jpg"; // Import your background image
 import Map from "../../components/Map.jsx";
 import { useState, useEffect } from 'react'
-
+//Form component was not used on this page because of some styling errors, so I just created another one
 const ContactPage = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
