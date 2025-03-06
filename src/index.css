@@ -36,7 +36,6 @@
    top: 50%;
    left: 80%;
  }
- 
  @keyframes move {
    0% {
      transform: translate(0, 0);
@@ -45,3 +44,4 @@
      transform: translate(50px, 50px);
    }
  }
+ 

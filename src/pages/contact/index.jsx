@@ -4,8 +4,39 @@ import { motion } from "framer-motion";
 import heroImage from "../../assets/telly.jpg"; // Adjust the path to your logo
 import backgroundImage from "../../background.jpg"; // Import your background image
 import Map from "../../components/Map.jsx";
+import { useState, useEffect } from 'react'
 
 const ContactPage = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [message, setMessage] = useState('')
+
+  const formatWhatsAppMessage = () => {
+    return `Hello,\n\nYou have a new contact inquiry:\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone}\n` +
+        `Message: ${message}\n\n` +
+        `Best regards.`;
+};
+
+const sendMessageOnWhatsApp = (e) => {
+    e.preventDefault()
+    if (!name || !email || !phone || !message) {
+        alert('Please fill all information');
+        return;
+    }
+
+    const phoneNumber = '+2349031400901'; // Replace with the recipient's WhatsApp number
+    const messageContent = formatWhatsAppMessage();
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(messageContent)}`;
+
+    // Open WhatsApp in a new tab with the message pre-filled
+    window.open(whatsappURL, '_blank');
+};
+
+
   return (
     <div
       className="min-h-screen inset-0 bg-fixed z-0 bg-center bg-cover relative"
@@ -51,7 +82,7 @@ const ContactPage = () => {
 
         {/* Contact Form */}
         <motion.div
-          className="shadow-lg mt-[-60px] md:mt-0 rounded-lg p-8 z-10 flex flex-col h-[400px] md:w-1/2 items-center"
+          className="shadow-lg mt-[-60px] md:mt-0 rounded-lg p-8 z-10 flex flex-col h-[460px] md:w-1/2 items-center"
           style={{ background: "linear-gradient(135deg, #e0e0e0, #bdbdbd)" }}
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -62,26 +93,38 @@ const ContactPage = () => {
           </h2>
           <form className="space-y-4">
             <div className="flex items-center">
-              <label className="block text-gray-700">Name</label>
+              <label className="block text-orange-500 mx-2">Name</label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 placeholder="Your Name"
+                value={name} onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="flex items-center">
-              <label className="block text-gray-700">Email</label>
+              <label className="block text-orange-500 mx-2">Number</label>
+              <input
+                type="tel"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                placeholder="Your Phone Number"
+                value={phone} onChange={(e) => setPhone(e.target.value)} 
+              />
+            </div>
+            <div className="flex items-center">
+              <label className="block text-orange-500 mx-2">Email</label>
               <input
                 type="email"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 placeholder="Your Email"
+                value={email} onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="flex items-center">
               <textarea
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 placeholder="Your Message"
                 rows="4"
+                value={message} onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
             <motion.button
@@ -89,6 +132,7 @@ const ContactPage = () => {
               className="w-full bg-orange-500 text-white py-2 rounded-md hover:bg-white hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={(e) => sendMessageOnWhatsApp(e)}
             >
               Send Message
             </motion.button>
