@@ -254,7 +254,19 @@ const Landing = () => {
           viewport={{ once: true, amount: 0.1 }}
           variants={dropIn}
         >
+          <div className="flex flex-col pt-[20px] items-center justify-center">
+          <motion.h2
+            className="text-2xl mt-[10px] font-bold text-gray-800"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            Our <span className="text-orange-500"> Clients</span>
+          </motion.h2>
           <Carousel />
+          </div>
+          
+         
         </motion.div>
       </div>
     </div>

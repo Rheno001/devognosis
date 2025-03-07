@@ -85,8 +85,6 @@ const TrainersPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
 
-
-
   const handleDotClick = (index) => {
     setCurrentIndex(index);
   };
@@ -112,10 +110,9 @@ const TrainersPage = () => {
   const y = useTransform(scrollY, [0, 300], [0, -50]);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-gray-100 relative">
       <div
-        className="relative inset-0 bg-fixed z-0 h-[500px] bg-center bg-cover"
+        className="relative inset-0 bg-gradient-to-b from-gray-800 to-gray-600 z-0 h-[500px] bg-center bg-cover"
         style={{
           backgroundImage: `url(${singleBackgroundImage})`,
           transform: "translateZ(0)",
@@ -135,7 +132,7 @@ const TrainersPage = () => {
             transition={{ duration: 1 }}
           />
           <motion.h1
-            className="text-4xl md:text-6xl font-bold"
+            className="text-4xl md:text-6xl font-bold text-shadow"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -163,11 +160,10 @@ const TrainersPage = () => {
             {trainers.map((trainer, index) => (
               <motion.div
                 key={index}
-                className="bg-white shadow-lg rounded-lg overflow-hidden"
+                className="bg-white shadow-lg rounded-lg overflow-hidden relative transition-transform duration-300 transform hover:scale-105"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
               >
                 <img
                   src={trainer.image}
@@ -175,7 +171,7 @@ const TrainersPage = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{trainer.name}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-gray-800 text-shadow">{trainer.name}</h3>
                   <p className="text-gray-700 mb-1">
                     <strong>Subject:</strong> {trainer.subject}
                   </p>

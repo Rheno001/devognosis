@@ -61,7 +61,7 @@ const Carousel = () => {
   };
 
   return (
-    <section className="py-12 overflow-hidden">
+    <section className="py-4 overflow-hidden">
       <div className="container mx-auto px-4">
         <div
           ref={carouselRef}
