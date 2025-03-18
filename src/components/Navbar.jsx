@@ -72,7 +72,8 @@ function Navbar() {
                             
                         ))}
                         <Link
-                        onClick={handleClick}
+                        onClick={()=> {handleClick()
+                            setIsOpen(false)}}
                         to="/contact"
                         className="text-orange-500 text-lg px-6 py-2 rounded-3xl bg-white transition-transform duration-300 hover:scale-105 hover:text-orange-500 md:hidden shadow-md hover:bg-white"
                     >
