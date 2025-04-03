@@ -52,7 +52,7 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 relative overflow-hidden">
-      {/* Hero Section with Image Slider */}
+      {/* Hero Section */}
       <div className="relative flex h-screen w-full">
         <div
           className="inset-0 bg-fixed z-0 fixed bg-center bg-cover"
